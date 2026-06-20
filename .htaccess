@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Consolidate the public site on HTTPS and the non-www hostname.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.jayshreewindoors\.com$ [NC]
+RewriteRule ^ https://jayshreewindoors.com%{REQUEST_URI} [R=301,L,NE]
+
+# Prevent MIME sniffing while allowing the host to keep its existing policies.
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,0 +1,142 @@
+JAYSHREE WINDOORS SEO AUDIT AND CHANGE LOG
+Domain: https://jayshreewindoors.com/
+Audit date: 2026-06-20 (Asia/Calcutta)
+
+LIVE AUDIT SUMMARY
+
+- HTTPS homepage: 200 OK on LiteSpeed/Hostinger.
+- HTTP homepage: 301 redirect to https://jayshreewindoors.com/.
+- HTTPS www homepage: returned 200 OK instead of redirecting to non-www. A safe
+  redirect rule is now included in .htaccess for deployment.
+- robots.txt: returned 200 text/plain, but advertised the former Vercel sitemap.
+- sitemap.xml: returned 200 application/xml, but listed the former Vercel URL.
+- Canonical, Open Graph, Twitter, and JSON-LD URLs in the deployed page used the
+  former jayshree-windoors.vercel.app hostname.
+- The homepage was indexable (no noindex and robots allowed crawling), but its
+  conflicting canonical and sitemap signals could cause the custom domain to be
+  ignored or consolidated incorrectly.
+- Bing public searches for site:jayshreewindoors.com and the exact brand name did
+  not return this website on the audit date. Google's public result endpoint did
+  not provide a dependable index result, so Google coverage must be confirmed in
+  Search Console after deployment.
+- Contact details found in the project were made consistent and visible:
+  Jayshree Windoors, 23/30 Gariahat Road, near Amazing Trip Tours & Travels,
+  Dhakuria, Kolkata, West Bengal 700029; +91 89818 49839;
+  jayshree.windoors@gmail.com. Unverified opening hours were removed from JSON-LD.
+
+SEARCH-PHRASE RESEARCH
+
+Google autocomplete checked on 2026-06-20 showed relevant phrases including:
+"aluminium windows Kolkata", "aluminium sliding window Kolkata",
+"aluminium windows price in Kolkata", "uPVC windows Kolkata",
+"uPVC sliding windows Kolkata", "uPVC windows and doors Kolkata", and
+"uPVC windows dealers in Kolkata". The page now uses only phrases that accurately
+describe the offered products and location. Superlatives and unsupported claims
+such as "best", "premium", absolute performance claims, and unverified business
+statistics were removed. No meta keywords tag was added.
+
+COMPLETED CHANGES
+
+- Rewrote the title, meta description, H1, supporting headings, product copy, and
+  visible service copy around aluminium and uPVC sliding/casement systems in
+  Kolkata without keyword stuffing.
+- Set the canonical URL and every public absolute URL to
+  https://jayshreewindoors.com/.
+- Expanded robots meta to allow large image previews.
+- Updated Open Graph and Twitter Card titles, descriptions, URL, image URL, image
+  type, dimensions, and accessible image description.
+- Rebuilt JSON-LD as a WebSite plus LocalBusiness/HomeAndConstructionBusiness
+  graph with a stable canonical @id, publisher link, logo ImageObject, contact
+  data, address, location, service area, and aluminium/uPVC service offers.
+- Removed unverified opening hours and avoided review/rating schema.
+- Improved all 12 rendered image alt attributes and corrected their intrinsic
+  width/height attributes. The hero preload now targets the image actually used.
+- Added a real #contact target and visible postal address, phone, and email.
+- Corrected heading hierarchy and removed invalid stray page text and an unused
+  CSS at-rule identified by HTML validation.
+- Replaced robots.txt's old sitemap URL with the custom-domain sitemap URL.
+- Replaced sitemap.xml's old Vercel URL, removed an unused XML namespace, and set
+  lastmod to 2026-06-20.
+- Added .htaccess rules that preserve the request path/query while redirecting
+  HTTP and www requests to the HTTPS non-www canonical host.
+- Added nosniff and strict-origin referrer headers to the Hostinger configuration.
+
+IMAGE FORMAT AUDIT
+
+File signatures were checked for every .jpg and .png asset. Seven files contained
+JPEG data behind a .png extension. They were renamed without decoding,
+re-encoding, resizing, or recompression:
+
+- aluminium-door.png -> aluminium-door-large.jpg
+- hero-bg.png -> hero-bg-large.jpg
+- installation.png -> installation-large.jpg
+- logo_backup.png -> logo-backup.jpg
+- modern-interior.png -> modern-interior-large.jpg
+- sliding-window.png -> sliding-window-large.jpg
+- upvc-window.png -> upvc-window-large.jpg
+
+None of these seven files had active HTML/CSS references, so no page reference
+changes were required. All remaining .png files have PNG signatures and all .jpg
+files have JPEG signatures.
+
+VALIDATION COMPLETED
+
+- sitemap.xml parses as valid XML.
+- The embedded application/ld+json parses as valid JSON.
+- Every local HTML image/stylesheet reference resolves to an existing file.
+- Every fragment link resolves to an existing unique ID.
+- All rendered images have non-empty alt text and width/height attributes.
+- All image extensions agree with their internal file signatures.
+- No jayshree-windoors.vercel.app, placeholder domain, obsolete image filename,
+  or missing local asset reference remains in public project files.
+- W3C Nu HTML validation was run after implementation; reported errors were fixed.
+
+DEPLOYMENT INSTRUCTIONS (HOSTINGER)
+
+1. Back up the current public_html directory.
+2. Upload the complete updated project contents to public_html. Include hidden
+   files, especially .htaccess, and preserve the images directory structure.
+3. Ensure the Hostinger primary domain remains jayshreewindoors.com and its SSL
+   certificate covers both jayshreewindoors.com and www.jayshreewindoors.com.
+4. Clear Hostinger/LiteSpeed cache and any CDN cache.
+5. Verify these production responses:
+   - http://jayshreewindoors.com/ -> one 301 to https://jayshreewindoors.com/
+   - https://www.jayshreewindoors.com/ -> one 301 to https://jayshreewindoors.com/
+   - https://jayshreewindoors.com/ -> 200
+   - https://jayshreewindoors.com/robots.txt -> 200 text/plain
+   - https://jayshreewindoors.com/sitemap.xml -> 200 XML and only canonical URLs
+6. View page source on production and confirm the canonical, og:url, JSON-LD URLs,
+   and sitemap location all use https://jayshreewindoors.com/.
+7. If Hostinger's redirect panel already has equivalent rules, keep only one
+   implementation to avoid redirect chains. The supplied .htaccess rule is safe
+   for the LiteSpeed/Apache environment observed during the audit.
+
+GOOGLE SEARCH CONSOLE
+
+1. Open https://search.google.com/search-console and add or select the Domain
+   property for jayshreewindoors.com. Complete DNS verification if needed.
+2. Open Sitemaps and submit: https://jayshreewindoors.com/sitemap.xml
+3. Use URL Inspection for https://jayshreewindoors.com/, run Test Live URL, then
+   request indexing after the deployed canonical and redirects are confirmed.
+4. Check Page indexing, HTTPS, Core Web Vitals, and Enhancements over the following
+   days. Investigate any alternate-page or duplicate-canonical status that still
+   mentions the Vercel hostname.
+5. Keep the old Vercel deployment redirected to the canonical domain if it remains
+   publicly accessible; otherwise remove it after the custom domain is indexed.
+
+BING WEBMASTER TOOLS
+
+1. Open https://www.bing.com/webmasters/ and add jayshreewindoors.com, either by
+   importing the verified Search Console property or completing Bing verification.
+2. Open Sitemaps and submit: https://jayshreewindoors.com/sitemap.xml
+3. Use URL Inspection for the homepage and request indexing after deployment.
+4. Review Site Scan and Search Performance for crawl errors, duplicate URLs, and
+   query impressions. Recheck branded and site: visibility after Bing recrawls.
+
+POST-DEPLOYMENT NOTE
+
+Indexing and rankings cannot be guaranteed by on-site changes. Search engines must
+recrawl the corrected signals, and local visibility also depends on a complete,
+consistent Google Business Profile/Bing Places listing and genuine external
+mentions. Do not add claims, ratings, reviews, service areas, or opening hours to
+schema unless they are accurate and also visible to visitors.
